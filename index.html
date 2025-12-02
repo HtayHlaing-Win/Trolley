@@ -313,5 +313,31 @@ footer {
         <p>Thank you</p>
     </footer>
 </div>
+
+<!-- QR CODE SECTION -->
+<div style="display: flex; justify-content: center; margin-top: 30px;">
+    <div style="text-align: center; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); max-width: 300px;">
+        <h3 style="margin-bottom: 15px; color: #2c3e50; font-size: 1.2em;">📱 Share This Guide</h3>
+        <div id="qrcode-trolley" style="display: flex; justify-content: center; margin: 20px 0;"></div>
+        <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 15px;">Scan to view this trolley arrangement guide</p>
+    </div>
+</div>
+
+<!-- QRCode.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<script>
+    // Trolley Guide QR Code
+    var trolleyURL = window.location.href;
+    new QRCode(document.getElementById("qrcode-trolley"), {
+        text: trolleyURL,
+        width: 150,
+        height: 150,
+        colorDark: "#667eea",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+</script>
+
 </body>
 </html>
